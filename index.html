@@ -84,6 +84,19 @@
     /* ---- mobile top bar: single clean row ---- */
     @media(max-width:700px){.topbar .container{justify-content:center}.top-items{flex-wrap:nowrap;justify-content:center;gap:18px;white-space:nowrap;font-size:11.5px}.top-items span:nth-child(2){display:none}.topbar{padding:0}.topbar .container{min-height:36px;display:flex;align-items:center}}
     @media(max-width:360px){.top-items{gap:12px;font-size:10px}}
+
+    /* ---- vehicle photos on fare cards ---- */
+    .fare-photo{position:relative;height:172px;margin:-30px -28px 22px;overflow:hidden;background:linear-gradient(145deg,#1b3350,#0b1a2d)}.fare-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .6s}.fare-card:hover .fare-photo img{transform:scale(1.06)}.fare-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,26,45,.75),transparent 55%)}
+    .fare-photo.noimg img{display:none}.fare-photo.noimg:before{content:attr(data-ico);position:absolute;inset:0;display:grid;place-items:center;font-size:64px;opacity:.55}
+
+    /* ---- hero vehicle thumbnails ---- */
+    .hero-vehicles{display:flex;gap:12px;margin-top:26px}
+    .hv{display:block;width:142px;border:1px solid rgba(215,179,106,.4);border-radius:14px;overflow:hidden;background:rgba(7,20,38,.72);backdrop-filter:blur(8px);transition:.25s}.hv:hover{border-color:var(--gold2);transform:translateY(-3px)}
+    .hv img{width:100%;height:78px;object-fit:cover;object-position:center 20%}.hv div{padding:8px 10px 9px}.hv strong{display:block;font-size:12px;color:#fff;line-height:1.3}.hv small{font-size:11px;color:var(--gold2);font-weight:800}
+    @media(max-width:700px){.hero-vehicles{gap:8px}.hv{flex:1;width:auto;min-width:0}.hv img{height:62px}.hv strong{font-size:11px}.hv small{font-size:10px}}
+
+    /* ---- compact hero ---- */
+    @media(min-width:701px){.hero-content{padding:44px 0 128px}.hero h1{margin:16px 0 14px;font-size:clamp(46px,6.4vw,70px)}.hero-actions{margin-top:20px}.hero-vehicles{margin-top:20px}.hv{width:128px}.hv img{height:58px}.hv div{padding:6px 9px 7px}.hero-offer{margin-top:14px;padding:7px 14px}}
   </style>
 </head>
 <body class="loading">
@@ -101,7 +114,7 @@
     <p class="hero-lead">Comfortable rides, clear fares and friendly booking support. Make every journey easier with Mabrook Travels.</p>
     <p class="hero-tamil">உங்கள் பயணம் இனிதாக அமையட்டும்!</p>
     <div class="hero-actions"><a class="btn btn-gold" href="tel:+919876543210">☎ Book Your Ride</a><a class="btn btn-outline" href="https://wa.me/919876543210?text=%F0%9F%9A%96%20%2AMabrook%20Travels%20%E2%80%93%20Taxi%20Booking%2A%0A%0AHello%21%20I%20would%20like%20to%20book%20a%20taxi.%20%F0%9F%99%8F%0A%0A%F0%9F%93%8D%20Pickup%3A%20%0A%F0%9F%93%8D%20Drop%3A%20%0A%F0%9F%93%85%20Date%3A%20%0A%F0%9F%9A%98%20Vehicle%20%28Small%20Car%20%2F%20Innova%20%2F%20SUV%29%3A%20%0A%0APlease%20confirm%20availability%20and%20fare." target="_blank" rel="noopener">◉ WhatsApp Booking</a></div>
-    <div class="hero-points hero-prices"><span>Small Car from ₹14/km</span><span>SUV ₹20/km</span><span>Innova ₹22/km</span></div>
+    <div class="hero-vehicles"><a class="hv" href="#fares"><img src="assets/small-car.webp" alt="Small car"><div><strong>Small Car</strong><small>from ₹15/km</small></div></a><a class="hv" href="#fares"><img src="assets/innova.webp" alt="Toyota Innova"><div><strong>Innova</strong><small>₹22/km</small></div></a><a class="hv" href="#fares"><img src="assets/suv.webp" alt="SUV"><div><strong>SUV</strong><small>₹20/km</small></div></a></div>
     <a class="hero-offer" href="tel:+919876543210">✦ Today's offer? Call and ask →</a>
   </div></div>
   <div class="hero-stats"><div class="container">
@@ -115,9 +128,9 @@
     <div class="offer-bar fade-up"><span class="offer-ico">✦</span><div><strong>Want today's offer? Call and ask.</strong><span class="tn">இன்றைய ஆஃபர் வேண்டுமா? அழைத்துக் கேளுங்கள்.</span></div><a class="btn btn-gold" href="tel:+919876543210">☎ Call for Offer</a></div>
     <div class="section-head"><span class="eyebrow">STRAIGHTFORWARD PRICING</span><h2 class="section-title">Clear fares. <em>No surprises.</em></h2><p class="section-desc">Choose your vehicle and see the per-kilometre rate before booking. Your final trip amount will be confirmed over the phone.</p></div>
     <div class="fare-grid">
-      <article class="fare-card featured fade-up"><span class="pill">A/C car · No return charge</span><h3>Small Car</h3><div class="fare-lines"><div class="fare-line"><span>One Way</span><b>₹15<small> / km</small></b></div><div class="fare-line"><span>Round Trip</span><b>₹14<small> / km</small></b></div></div><ul><li>No return fare for one-way trips</li><li>Local and outstation drops</li><li>Family packages available</li></ul></article>
-      <article class="fare-card fade-up"><span class="pill">Family &amp; group travel</span><h3>Innova</h3><div class="fare-amount">₹22 <small>/ km</small></div><ul><li>Spacious A/C ride</li><li>Outstation and airport trips</li><li>Experienced driver</li></ul></article>
-      <article class="fare-card fade-up"><span class="pill">Comfortable A/C ride</span><h3>SUV</h3><div class="fare-amount">₹20 <small>/ km</small></div><ul><li>Comfortable A/C SUV</li><li>Outstation and airport trips</li><li>Experienced driver</li></ul></article>
+      <article class="fare-card featured fade-up"><div class="fare-photo" data-ico="🚗"><img src="assets/small-car.webp" alt="Small car taxi" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div><span class="pill">A/C car · No return charge</span><h3>Small Car</h3><div class="fare-lines"><div class="fare-line"><span>One Way</span><b>₹15<small> / km</small></b></div><div class="fare-line"><span>Round Trip</span><b>₹14<small> / km</small></b></div></div><ul><li>No return fare for one-way trips</li><li>Local and outstation drops</li><li>Family packages available</li></ul></article>
+      <article class="fare-card fade-up"><div class="fare-photo" data-ico="🚐"><img src="assets/innova.webp" alt="Toyota Innova taxi" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div><span class="pill">Family &amp; group travel</span><h3>Innova</h3><div class="fare-amount">₹22 <small>/ km</small></div><ul><li>Spacious A/C ride</li><li>Outstation and airport trips</li><li>Experienced driver</li></ul></article>
+      <article class="fare-card fade-up"><div class="fare-photo" data-ico="🚙"><img src="assets/suv.webp" alt="SUV taxi" loading="lazy" onerror="this.parentNode.classList.add('noimg')"></div><span class="pill">Comfortable A/C ride</span><h3>SUV</h3><div class="fare-amount">₹20 <small>/ km</small></div><ul><li>Comfortable A/C SUV</li><li>Outstation and airport trips</li><li>Experienced driver</li></ul></article>
     </div>
     <div class="extra-row"><div class="extra"><strong>130 km</strong><span>Minimum coverage, one-way trips</span></div><div class="extra"><strong>250 km</strong><span>Minimum per day, round trips</span></div><div class="extra"><strong>₹400</strong><span>Driver bata per day</span></div><div class="extra"><strong>Additional</strong><span>Toll &amp; permit charges, if applicable</span></div></div>
   </div></section>
